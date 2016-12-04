@@ -1,0 +1,113 @@
+html {
+    background-color: #1c1c1c;
+}
+
+body {
+    margin: 0 auto;
+    width: 700px;
+    height: 100%;
+    background-color: #545454;
+    color: #e3e3e3;
+}
+
+#header {
+    width: 700px;
+    height: 60px;
+    background: linear-gradient(to bottom, rgb(237, 59, 151), rgb(252, 104, 180));
+    border: 1px solid black;
+}
+
+h1 {
+    margin-left: 40px;
+    padding-top: 10px;
+    letter-spacing: 3px;
+    color: #e3e3e3;
+}
+
+#wrapper {
+    height: 600px;
+    background-color: #545454;
+    color: #e3e3e3;
+}
+
+input[type="text"]#enterTask {
+    border-radius: 4px;
+    background: #ffffff;
+    height: 30px;
+    width: 350px;
+    font-size: 18px;
+    color: #1c1c1c;
+    margin-left: 175px;
+    margin-top: 20px;
+    padding-left: 10px;
+}
+
+input[type="text"]#enterTask:focus {
+    outline-color: rgb(237, 59, 151);
+}
+
+input[type="checkbox"] {
+    width: 15px;
+    height: 15px;
+}
+
+#todo-list {
+    margin-left: 175px;
+    margin-top: 20px;
+}
+
+#todo-list li {
+    display: block;
+    margin: 10px 0;
+    width: 350px;
+    height: 30px;
+    background-color: silver;
+    color: #1c1c1c;
+    border: 2px solid rgb(237, 59, 151);
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-top: 12px;
+}
+
+p {
+   padding-left: 10px;
+    cursor: default;
+}
+
+.checked {
+    text-decoration: line-through;
+}
+
+#counter {
+    margin-left: 175px;
+    letter-spacing: 1px;
+}
+
+#popup {
+    display: none;
+    position: absolute;
+    top: 150px;
+    left: 155px;
+    width: 400px;
+    height: 250px;
+    border-radius: 15px;
+    border: 2px solid rgb(237, 59, 151);
+    background-color: #545454;
+    color: #e3e3e3;
+}
+
+#save {
+    margin: 20px 90px;
+}
+
+input[type="text"]#editTask {
+    border-radius: 4px;
+    background: #ffffff;
+    height: 30px;
+    width: 350px;
+    font-size: 18px;
+    color: #1c1c1c;
+    margin-top: 50px;
+    margin-left: 18px;
+    padding-left: 10px;
+}
