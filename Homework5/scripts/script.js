@@ -1,3 +1,9 @@
+var counterID = 0,
+    countChecked = 0;
+var enterTask = document.getElementById("enterTask");
+enterTask.focus();
+var counter = document.getElementById("counter");
+
 function updateTaskSelected() {
     var checkID = this.id.replace("check_", "");
     var task = document.getElementById("text_" + checkID);
@@ -13,6 +19,7 @@ function updateTaskSelected() {
 }
 
 function editedItem() {
+    document.getElementById("parent_popup").style.display = "block";
     document.getElementById("popup").style.display = "block";
     var editID = this.id.replace("edit_", "");
     var oldTask = document.getElementById("text_" + editID).innerHTML;
@@ -28,12 +35,14 @@ function editedItem() {
         }
         document.getElementById("text_" + editID).innerText = editedTask;
         document.getElementById("popup").style.display = "none";
+        document.getElementById("parent_popup").style.display = "none";
     }, false);
 
     cancelButton.addEventListener("click", function(){
 
         document.getElementById("text_" + editID).innerText = oldTask;
         document.getElementById("popup").style.display = "none";
+        document.getElementById("parent_popup").style.display = "none";
     }, false);
 }
 
@@ -50,6 +59,8 @@ function removeItem() {
 function addNewTask(todoList, item) {
     counterID++;
     var task = document.createElement("li");
+    task.setAttribute("draggable", true);
+
     task.id = "li_" + counterID;
 
     var checkBox = document.createElement("input");
@@ -76,15 +87,9 @@ function addNewTask(todoList, item) {
     task.appendChild(p);
     task.appendChild(editButton);
     task.appendChild(removeButton);
+
     todoList.appendChild(task);
-
 }
-
-var counterID = 0,
-    countChecked = 0;
-var enterTask = document.getElementById("enterTask");
-enterTask.focus();
-var counter = document.getElementById("counter");
 
 enterTask.onkeyup = function(event) {
 
@@ -99,4 +104,16 @@ enterTask.onkeyup = function(event) {
         document.getElementById("enterTask").value = "";
     }
 };
+
+document.getElementById("add").addEventListener("click", function(event) {
+
+        var taskItem = enterTask.value;
+
+        if(taskItem == "" || taskItem == " ") {
+            return false;
+        }
+
+        addNewTask(document.getElementById("todo-list"), taskItem);
+        document.getElementById("enterTask").value = "";
+}, false);
 
