@@ -3,26 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="styles/reset.css" />
+
     <link rel="stylesheet" type="text/css" href="styles/style.css" />
     <script type="text/javascript" src="scripts/script.js" defer></script>
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">  
+
     <title>Todo-list</title>
 </head>
 <body>
-    <div id="header">
-        <h1> TODO-LIST </h1>
-    </div>
-    <div id="wrapper">
-        <input id="enterTask"  type="text"/> <button id="add"> Add </button>
-        <ul id="todo-list">
+    <div class="page">
+        <div id="header">
+            <h1> TODO-LIST </h1>
+        </div>
+        <div id="wrapper">
+            <input id="enterTask"  type="text" maxlength="20" /> <button id="add"><i class="fa fa-plus" aria-hidden="true"></i></button>
+            <ul id="todo-list">
 
-        </ul>
-        <p id="counter"> </p>
-    </div>
-    <div id="parent_popup">
-        <div id="popup">
-            <input id="editTask" type="text"/>
-            <button id="save"> Save </button>
-            <button id="cancel"> Cancel </button>
+            </ul>
+            <p id="counter"> </p>
+        </div>
+        <div id="parent_popup">
+            <div id="popup">
+                <input id="editTask" type="text"/><br>
+                <div style="width:120px; margin:30px auto;"><button id="save"><i class="fa fa-floppy-o" aria-hidden="true"></i></button>
+                <button id="cancel"><i class="fa fa-ban" aria-hidden="true"></i></button></div>
+            </div>
         </div>
     </div>
 </body>

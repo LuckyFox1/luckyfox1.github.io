@@ -1,52 +1,52 @@
-html {
-    background-color: #1c1c1c;
+body {
+    margin:0px; padding: 0px ;
+    height:100%; width:100%;
+    background: linear-gradient(145deg,  #b48a8e 0%,#030b16 100%);
+    background-attachment:fixed;
+    
 }
 
-body {
-    margin: 0 auto;
-    width: 700px;
-    height: 100%;
-    background-color: #545454;
-    color: #e3e3e3;
-}
+
+.page { width:700px; margin:25px auto; background-color:#242a42; }
 
 #header {
     width: 700px;
     height: 60px;
-    background: linear-gradient(to bottom, rgb(237, 59, 151), rgb(252, 104, 180));
+    background: linear-gradient(to bottom, #a7f2dd, #7bcbcc);
     border: 1px solid black;
+    color:#242a42;
 }
 
 h1 {
     margin-left: 40px;
     padding-top: 10px;
     letter-spacing: 3px;
-    color: #e3e3e3;
+    color: #242a42  ;
 }
 
 #wrapper {
-    height: 600px;
-    background-color: #545454;
-    color: #e3e3e3;
+    height: auto;
+    padding-bottom:20px;
+    background-color: #242a42;
+    color:#fff;
 }
 
 input[type="text"]#enterTask {
     border-radius: 4px;
-    background: #ffffff;
+    background: #242a42;
     height: 30px;
     width: 350px;
     font-size: 18px;
-    color: #1c1c1c;
+    color: #999fb5;
+    border:1px solid #999fb5;
     margin-left: 175px;
     margin-top: 20px;
     padding-left: 10px;
 }
 
-input[type="text"]#enterTask:focus {
-    outline-color: rgb(237, 59, 151);
-}
-
 input[type="checkbox"] {
+    background-color:#fff;
+    border:1px solid #313959;
     width: 15px;
     height: 15px;
 }
@@ -58,21 +58,24 @@ input[type="checkbox"] {
 
 #todo-list li {
     display: block;
-    margin: 10px 0;
+    border-bottom: 1px solid #313959;   
     width: 350px;
     height: 30px;
-    background-color: silver;
-    color: #1c1c1c;
-    border: 2px solid rgb(237, 59, 151);
-    border-radius: 5px;
+    background-color: transparent;
+    color: #ffffff;
     padding-left: 10px;
     padding-top: 12px;
+    cursor: move;
 }
+#todo-list li:after { clear:both; }
+#todo-list li:last-child { border-bottom:none; margin-bottom:30px }
 
 p {
    padding-left: 10px;
+   margin-right:20px;
     cursor: default;
 }
+#todo-list li button { margin-right:5px; float:right; }
 
 .checked {
     text-decoration: line-through;
@@ -85,9 +88,8 @@ p {
 
 #parent_popup {
     display: none;
-    background: #000;
+    background: rgba(10,10,10,0.85);
     height: 100%;
-    opacity: 0.9;
     position: fixed;
     width: 100%;
     z-index: 100;
@@ -97,17 +99,19 @@ p {
 
 #popup {
     display: none;
-    position: fixed;
-    top: 150px;
-    left: 34%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
     width: 400px;
-    height: 250px;
-    border-radius: 15px;
-    border: 2px solid rgb(237, 59, 151);
-    background-color: #545454;
+    height: 200px;
+    margin-top:-100px;
+    margin-left: -200px;
+    border: 1px solid #999fb5;
+    background-color: #242a42;
     color: #e3e3e3;
-    margin: 0 auto;
 }
+
+#popup button { padding:5px; padding-left:15px; padding-right:15px; margin:0; margin-right:10px;}
 
 
 #save {
@@ -141,3 +145,11 @@ button#add {
     height: 36px;
     border-radius: 5px;
 }
+
+.ghost {
+    opacity: .4;
+}
+
+button { border:1px solid #999fb5; color:#999fb5; border-radius:3px; background-color:#242a42; transition:0.3s; }
+button:hover { color:#242a42; border-radius:3px; background-color:#999fb5; transition:0.3s; }
+
