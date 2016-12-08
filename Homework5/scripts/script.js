@@ -181,6 +181,10 @@ function sortable(rootEl, onUpdate){
             var rect = target.getBoundingClientRect();
             var next = (evt.clientY - rect.top)/(rect.bottom - rect.top) > .5;
             rootEl.insertBefore(dragEl, next && target.nextSibling || target);
+
+        }
+        if(target.nextSibling == null) {
+            rootEl.insertBefore(dragEl, null);
         }
     }
     
