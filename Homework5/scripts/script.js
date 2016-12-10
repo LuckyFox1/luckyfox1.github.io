@@ -58,7 +58,6 @@ function removeItem() {
     }
     counter.innerText = "You selected " + countChecked + " items.";
     document.getElementById("li_" + itemID).remove();
-    //document.getElementById("li_" + itemID).style.display = "none";
     saveToLS();
 }
 
@@ -182,6 +181,9 @@ function sortable(rootEl, onUpdate){
             var next = (evt.clientY - rect.top)/(rect.bottom - rect.top) > .5;
             rootEl.insertBefore(dragEl, next && target.nextSibling || target);
         }
+        if(target.nextSibling == null) {
+            rootEl.insertBefore(dragEl, null);
+        }
     }
     
     function _onDragEnd(evt){
@@ -213,11 +215,16 @@ function sortable(rootEl, onUpdate){
 }
 
 
-if(storage == null) { alert("Local Storage is not supported."); }
-if(JSON.parse(storage.getItem('todo')).length != 0) {
-    loadFromLS();
+if(storage == null)
+{
+    alert("Local Storage is not supported.");
 }
 
 sortable( document.getElementById('todo-list'), function (item){
     saveToLS();
 });
+
+if(JSON.parse(storage.getItem('todo')).length != 0) {
+    loadFromLS();
+}
+
