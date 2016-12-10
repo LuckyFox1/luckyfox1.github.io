@@ -185,9 +185,7 @@ function sortable(rootEl, onUpdate){
         if(target.nextSibling == null) {
             rootEl.insertBefore(dragEl, null);
         }
-        if(target.nextSibling == null) {
-            rootEl.insertBefore(dragEl, null);
-        }
+
     }
     
     function _onDragEnd(evt){
